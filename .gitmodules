@@ -1,0 +1,3 @@
+[submodule "poets/corpus"]
+	path = poets/corpus
+	url = https://github.com/enzeas/corpus
