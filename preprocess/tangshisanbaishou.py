@@ -10,10 +10,10 @@ poet_type = []
 poet_text = []
 
 origin_poet = 'poets/corpus/唐詩三百首.txt'
-json_poet = 'json/tangshisanbaishou.json'
+json_poet = 'poets_json/tangshisanbaishou.json'
 
 with open(origin_poet) as f:
-    for line in f.readlines():
+    for line in f:
         arr = line.strip().split(':')
         if len(arr) != 2:
             continue
@@ -31,10 +31,10 @@ with open(origin_poet) as f:
                     len(poet_type) == len(poet_text))
 
 poets = []
-for idx in range(len(poet_name)):
+for idx, name in enumerate(poet_name):
     poet = {
         'name': poet_name[idx],
-        'author': poet_name[idx],
+        'author': poet_author[idx],
         'type': poet_type[idx],
         'text': poet_text[idx],
     }
@@ -43,6 +43,3 @@ print("poets num: %d" % len(poets))
 
 with open(json_poet, 'w') as f:
     json.dump(poets, fp=f, separators=(',', ': '), indent=2, ensure_ascii=False)
-
-
-
