@@ -4,13 +4,15 @@ import json
 import os
 import re
 import sys
+sys.path.append('.')
+import config
 
 # 过滤出五言诗和七言诗
 
 class Filter(object):
     def __init__(self, num):
         self.num = num
-        self.punc = ['，', '。', '？', '！', '：', '、', '【', '】', ]
+        self.punc = config.punctuation
         self.pattern = '[%s]+' % ''.join(self.punc)
 
     def _split_text(self, text):
