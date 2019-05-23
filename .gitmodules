@@ -1,3 +1,6 @@
 [submodule "poets/corpus"]
 	path = poets/corpus
 	url = https://github.com/enzeas/corpus
+[submodule "poets/longyusheng.org"]
+	path = poets/longyusheng.org
+	url = https://github.com/wmjordan/longyusheng.org.git
